@@ -10,6 +10,7 @@
     .card {
       margin: 5px;
       padding: 10px;
+      display: flex;
     }
     body {
       background-color: #f1f1f1;
@@ -17,13 +18,13 @@
     </style>
 </head>
 <body>
-    <div class="mdc-card card" style="display: inline-block;">
+    <div class="mdc-card card" style="display: block;">
       <div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
         <input type="text" id="ipField" class="mdc-text-field__input">
         <div class="mdc-notched-outline">
           <div class="mdc-notched-outline__leading"></div>
           <div class="mdc-notched-outline__notch">
-            <label for="ipField" class="mdc-floating-label">Your Name</label>
+            <label for="ipField" class="mdc-floating-label">IP Address</label>
           </div>
           <div class="mdc-notched-outline__trailing"></div>
         </div>
@@ -32,12 +33,13 @@
         <span class="mdc-button__label">Add</span>
       </button>
     </div>
-    <div id="card-list" style="display: flex;">
+    <div id="card-list" style="display: inline-grid;">
         <div id="card" class="mdc-card card mdc-typography" style="display: none">
+          <div id="ip"><b>IP: </b></div>
+          <div id="motd"><b>MOTD: </b>loading</div>
           <div id="playersonline"><b>Players Online: </b>loading</div>
           <div id="players"><b>Players: </b>loading</div>
           <div id="version"><b>Version: </b>loading</div>
-          <div id="motd"><b>MOTD: </b>loading</div>
         </div>
     </div>
 </body>
