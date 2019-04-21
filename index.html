@@ -6,17 +6,38 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
+    <style>
+    .card {
+      margin: 5px;
+      padding: 10px;
+    }
+    body {
+      background-color: #f1f1f1;
+    }
+    </style>
 </head>
 <body>
-    <input type="text" id="ipField">
-    <button onclick="addIP()">Add</button>
-    <div id="card-list">
-        <div id="card" style="display: none">
-          <div id="playersonline">Players Online: </div>
-          <div id="players">Players: </div>
-          <div id="version">Version: </div>
-          <div id="motd">MOTD: </div>
+    <div class="mdc-card card" style="display: inline-block;">
+      <div class="mdc-text-field mdc-text-field--outlined" data-mdc-auto-init="MDCTextField">
+        <input type="text" id="ipField" class="mdc-text-field__input">
+        <div class="mdc-notched-outline">
+          <div class="mdc-notched-outline__leading"></div>
+          <div class="mdc-notched-outline__notch">
+            <label for="ipField" class="mdc-floating-label">Your Name</label>
+          </div>
+          <div class="mdc-notched-outline__trailing"></div>
+        </div>
+      </div>
+      <button class="mdc-button mdc-button--raised" onclick="appIP()">
+        <span class="mdc-button__label">Add</span>
+      </button>
+    </div>
+    <div id="card-list" style="display: flex;">
+        <div id="card" class="mdc-card card mdc-typography" style="display: none">
+          <div id="playersonline"><b>Players Online: </b>loading</div>
+          <div id="players"><b>Players: </b>loading</div>
+          <div id="version"><b>Version: </b>loading</div>
+          <div id="motd"><b>MOTD: </b>loading</div>
         </div>
     </div>
 </body>
