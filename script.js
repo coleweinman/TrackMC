@@ -48,8 +48,9 @@ function updateIP(ip) {
 				}
 				if(motd == undefined) {
 				  motd = res.description;
-				  motd = motd.split(new RegExp("§.")).join("");
 				}
+				motd = motd.split(new RegExp("§.")).join("");
+				motd = motd.split(new RegExp("\\u.....")).join("");
 				var element = document.getElementById(ip);
 				if(element != null) {
 				  element.childNodes[1].innerHTML = "<b>IP: </b>"+ip;
@@ -66,7 +67,7 @@ function updateIP(ip) {
 			}
         }
     };
-    xhttp.open("GET", "https://redtech-trackmc.appspot.com/?ip="+ip, true);
+    xhttp.open("GET", "https://trackmcapi-gdq3jycnxq-uc.a.run.app/?ip="+ip, true);
     xhttp.send();
 
 }
