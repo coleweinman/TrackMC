@@ -1,7 +1,7 @@
 mdc.autoInit();
 
 var ips = [];
-var update = setInterval(refresh, 3000);
+var update = setInterval(refresh, 30000);
 
 for(var k = 0; k < ips.length; k++) {
   addIP(ips[k]);
